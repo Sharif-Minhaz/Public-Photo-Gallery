@@ -1,0 +1,24 @@
+{
+	"name": "user-photo-gallery",
+	"version": "1.0.0",
+	"description": "A user controlled photo gallery where user can add and remove their uploaded photo",
+	"main": "index.js",
+	"scripts": {
+		"start": "node index.js",
+		"dev": "nodemon index.js",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "Sharif Md. Minhazur Rahman Rabbi",
+	"license": "ISC",
+	"dependencies": {
+		"cloudinary": "^1.30.0",
+		"cors": "^2.8.5",
+		"dotenv": "^16.0.1",
+		"ejs": "^3.1.8",
+		"express": "^4.18.1",
+		"mongoose": "^6.4.0"
+	},
+	"devDependencies": {
+		"nodemon": "^2.0.16"
+	}
+}
