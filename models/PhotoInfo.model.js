@@ -10,12 +10,14 @@ const photoInfoSchema = new Schema(
 			type: String,
 			required: true,
 		},
+		cloudinaryId: {
+			type: String,
+			required: true,
+		},
 	},
 	{
 		timestamps: true,
 	}
 );
 
-const PhotoInfo = model("photoInfo", photoInfoSchema);
-
-module.exports = PhotoInfo;
+module.exports = model("photoInfo", photoInfoSchema);

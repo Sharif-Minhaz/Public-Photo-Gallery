@@ -5,6 +5,8 @@ const config = require("./config/config");
 const setRoutes = require("./routes/routes");
 const setMiddlewares = require("./middlewares/middlewares");
 
+app.set("view engine", "ejs");
+
 // set middlewares & routes
 setRoutes(app);
 setMiddlewares(app);
