@@ -2,6 +2,12 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const config = require("./config/config");
+const setRoutes = require("./routes/routes");
+const setMiddlewares = require("./middlewares/middlewares");
+
+// set middlewares & routes
+setRoutes(app);
+setMiddlewares(app);
 
 app.use((req, res, next) => {
 	res.status(404).json({ message: "Page not found" });
