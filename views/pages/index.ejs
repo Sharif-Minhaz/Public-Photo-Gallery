@@ -2,7 +2,7 @@
 	</head>
 	<body>
 		<%- include("../partials/nav.ejs") %>
-
+		<!-- getting imagesInfo from outside -->
 		<div class="container">
 			<p class="form-text mt-lg-4"><em>@Upload Images to view in Photo gallery</em></p>
 			<!-- upload file -->
@@ -13,9 +13,29 @@
 					<input type="submit" class="input-group-text" for="inputGroupFile02" />
 				</form>
 			</div>
-			<div class="row mt-5">
-				<!-- images here -->
+			<div class="row mt-5" id="gallery">
 				<h2 class="mt-4">Photo Gallery</h2><hr>
+				<!-- images here -->
+				<% if(imagesInfo && imagesInfo.length > 0) { %> 
+					<% imagesInfo.forEach(imageInfo => { %> 
+						<div class="col-xl-3 col-lg-4 col-sm-6 col-12">
+							<div class="card">
+								<img class="w-100" src="<%= imageInfo.image %>" alt="upload_photo">
+								<div class="card-body">
+									<p class="form-text d-flex justify-content-between align-items-center">
+										Uploaded by: <%= imageInfo.uploader %>
+										<a href="/upload/delete/<%= imageInfo._id %>" class="btn btn-danger">
+											<i class="fa-regular fa-trash-can"></i>
+										</a>
+									</p>
+									
+								</div>
+							</div>
+						</div>
+					<% }) %> 
+				<% } else { %>
+					<p class="lead text-center my-3 py-5">No image found. Upload for view image here</p>
+				<% } %>  
 			</div>
 		</div>
 

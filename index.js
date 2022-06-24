@@ -12,11 +12,12 @@ setRoutes(app);
 setMiddlewares(app);
 
 app.use((req, res, next) => {
-	res.status(404).json({ message: "Page not found" });
+	res.status(404).send("<h1>Page not found</h1><a href='/'>Back to home</a>");
 });
 
 app.use((err, req, res, next) => {
-	res.status(500).json({ message: "Internal server error", error: err });
+	console.error(err);
+	res.status(500).send("<h1>Internal server error</h1><hr />");
 });
 
 mongoose
